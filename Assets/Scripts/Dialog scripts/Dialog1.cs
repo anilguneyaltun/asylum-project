@@ -24,17 +24,15 @@ public class Dialog1 : MonoBehaviour
     {
         foreach (char letter in sentences[index].ToCharArray())
         {
+            continueButton.SetActive(true);
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingspeed);
         }
     }
 
-    
-  
-    // Update is called once per frame
-    void Update()
+    public void deleteSentence()
     {
-        
-       
+        continueButton.SetActive(false);
+        textDisplay.text = "";
     }
 }

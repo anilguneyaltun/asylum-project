@@ -10,26 +10,15 @@ public class Dialog2 : MonoBehaviour
     public string[] sentences;
     private int index;
     public float typingspeed;
-    public GameObject continueButton;
-    public AudioClip[] sesarray;
-    public AudioSource ses;
-    public GameObject audiocontroller;
-    public float targetTime = 0.0f;
     public TextMeshProUGUI textBox;
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "Player")
-        {
-            Debug.Log("killtext");
-
-            
-
-
-            textBox.text = "Get close to guardian. Then Press F.";
-        }
+        if (collider.gameObject.CompareTag("Player"))
+            textBox.text = "Press E to kill the Asylum Guard.";
+    
     }
 
-        void Start()
+    void Start()
     {
         StartCoroutine(Type());
     }
@@ -44,11 +33,4 @@ public class Dialog2 : MonoBehaviour
     }
 
     
-  
-    // Update is called once per frame
-    void Update()
-    {
-       
-       
-    }
 }

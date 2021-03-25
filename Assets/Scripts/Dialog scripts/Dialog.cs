@@ -81,7 +81,8 @@ public class Dialog : MonoBehaviour
             ses.clip = sesarray[2];
             if (ses.isPlaying == false)
                 ses.Play();
-        }  if (textDisplay.text == sentences[3])
+        }  
+        if (textDisplay.text == sentences[3])
         {
             Debug.Log("4.cumle");
             ses.clip = sesarray[3];
@@ -179,11 +180,11 @@ public class Dialog : MonoBehaviour
         }
         if (targetTime >= 7.0f)
         {
-            SceneManager.LoadScene("SampleScene 1");
+            SceneManager.LoadScene("newScene2");
           
         }  if (targetTime2 >= 5.0f)
         {
-            SceneManager.LoadScene("SampleScene 1");
+            SceneManager.LoadScene("newScene2");
           
         }
 
