@@ -77,8 +77,7 @@ GameObject:
   - component: {fileID: 1043024162395395846}
   - component: {fileID: 1043024162395395850}
   - component: {fileID: 1043024162395395845}
-  - component: {fileID: 1043024162395395851}
-  - component: {fileID: 919132148586668180}
+  - component: {fileID: 5854246989080118733}
   m_Layer: 0
   m_Name: Char
   m_TagString: Player
@@ -95,7 +94,7 @@ Transform:
   m_GameObject: {fileID: 196180510801897197}
   m_LocalRotation: {x: 0, y: 0.72062373, z: 0, w: 0.6933264}
   m_LocalPosition: {x: -56.2, y: 1.25, z: -13.39}
-  m_LocalScale: {x: 1.23, y: 1.23, z: 1.23}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 2180307435271249504}
   - {fileID: 5017989936361348291}
@@ -171,9 +170,9 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
---- !u!114 &1043024162395395851
+--- !u!114 &5854246989080118733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,21 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc133a3daa38bb8468bb198b603dfeb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClickEnviroment:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1043024162395395851}
-        m_TargetAssemblyTypeName: CharController, Assembly-CSharp
-        m_MethodName: SetDestination
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   clickableLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -211,22 +195,21 @@ MonoBehaviour:
   rot: {x: 0, y: 0, z: 0, w: 0}
   currentInteractable: {fileID: 0}
   isKeyGot: 0
---- !u!114 &919132148586668180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196180510801897197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db06ed61640e07a4aa55488bafe8ff42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFull: 0000
-  slots:
-  - {fileID: 0}
-  - {fileID: 0}
+  OnClickEnviroment:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5854246989080118733}
+        m_TargetAssemblyTypeName: CharController, Assembly-CSharp
+        m_MethodName: SetDestination
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &848556141661467548
 GameObject:
   m_ObjectHideFlags: 0

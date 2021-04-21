@@ -1,34 +1,35 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class CharController : MonoBehaviour
 {
-    #region 
+    #region
+
+    public InventoryObject inventory;
+    
+    [HideInInspector]public LayerMask clickableLayer;
+    [HideInInspector]public GameObject activePlayer;
+    [HideInInspector]public Vector3 moveTarget;
+    [HideInInspector]public bool isInteractable;
+    [HideInInspector]public bool pathReached;
+    [HideInInspector]public bool canMove;
+    [HideInInspector]public Quaternion rot;
+    [HideInInspector]public GameObject currentInteractable;
+    [HideInInspector]public bool isKeyGot;
+    
     public EventVector3 OnClickEnviroment;
     private NavMeshAgent playerAgent;
-    public LayerMask clickableLayer;
-    public GameObject activePlayer;
 
     private Animator animator;
 
     private int speedId;
     private int rotateId;
-
-    public Vector3 moveTarget;
-
-    public bool isInteractable;
-    public bool pathReached;
-    public bool canMove;
-
-    public Quaternion rot;
-
-    public GameObject currentInteractable;
-
+    
     NavMeshAgent agent; 
 
-    public bool isKeyGot;
 
     #endregion
     public void Awake(){
@@ -40,8 +41,6 @@ public class CharController : MonoBehaviour
         agent.destination = destination;
     }
 
-    
-
     public enum MoveFSM
     {
         findPosition,
@@ -51,9 +50,7 @@ public class CharController : MonoBehaviour
     }
 
     #region 
-
-
-
+    
     private void Start()
     {
         animator = this.GetComponent<Animator>();
@@ -176,6 +173,22 @@ public class CharController : MonoBehaviour
         }
     }
 #endregion
+
+    //TODO: will be changed as clickable object later
+    public void OnTriggerEnter(Collider other)
+    {
+        var item = other.GetComponent<ItemObject>();
+        if (item)
+        {
+            inventory.AddItem(item.item, 1);
+            Destroy(other.gameObject);
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        inventory.Container.Clear();
+    }
 }
 
 
