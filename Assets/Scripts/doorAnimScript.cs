@@ -11,19 +11,13 @@ public class doorAnimScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
-        {
-            print("intersect");
             MoveToPosition();
-        }
     }
     
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
-        {
-            print("i ");
             MoveBackToPosition();
-        }
     }
 
     public void MoveToPosition()
@@ -33,6 +27,6 @@ public class doorAnimScript : MonoBehaviour
     
     public void MoveBackToPosition()
     {
-        iTween.MoveTo(animObject, iTween.Hash("islocal", true, "z", -4.727,"time",1, "easetype", "EaseInCirc", "delay", 2));
+        iTween.MoveTo(animObject, iTween.Hash("islocal", true, "z", -4.727,"time",1, "easetype", "EaseInCirc", "delay", 1));
     }
 }
