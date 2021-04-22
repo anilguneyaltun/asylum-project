@@ -7,8 +7,9 @@ using UnityEngine.AI;
 public class CharController : MonoBehaviour
 {
     #region
-
+    bool isActive;
     public InventoryObject inventory;
+    public GameObject inventoryPanel;
     
     [HideInInspector]public LayerMask clickableLayer;
     [HideInInspector]public GameObject activePlayer;
@@ -28,17 +29,24 @@ public class CharController : MonoBehaviour
     private int speedId;
     private int rotateId;
     
-    NavMeshAgent agent; 
+    NavMeshAgent agent;
+
+    private DialogManagerScript dms;
+    private bool isConversation;
 
 
     #endregion
     public void Awake(){
         agent = GetComponent<NavMeshAgent>();
+        dms = FindObjectOfType<DialogManagerScript>();
+        
 
     }
 
     public void SetDestination(Vector3 destination) {
-        agent.destination = destination;
+        if(!dms.isConversation)
+            agent.destination = destination;
+        
     }
 
     public enum MoveFSM
@@ -66,11 +74,14 @@ public class CharController : MonoBehaviour
 
     void Update()
     {
+        print(dms.isConversation);
+        openInventory();
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 150, clickableLayer.value))
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 15, clickableLayer.value))
         {
             if (Input.GetMouseButtonDown(0))
             {
+                
                 OnClickEnviroment.Invoke(hit.point);
                 
                 animator.SetFloat(speedId, 3f);
@@ -83,14 +94,13 @@ public class CharController : MonoBehaviour
                 OnClickEnviroment.Invoke(hit.point);
             }
         }
-        if (!playerAgent.pathPending)
+        if (!playerAgent.pathPending )
         {
-            if (playerAgent.remainingDistance <= playerAgent.stoppingDistance)
+            if (playerAgent.remainingDistance <= playerAgent.stoppingDistance )
             {
                 animator.SetFloat(speedId, 0f);
 
                 pathReached = true;
-
 
             }
         }
@@ -109,7 +119,6 @@ public class CharController : MonoBehaviour
 
                 pathReached = true;
 
-               
             }
         }
 
@@ -130,7 +139,6 @@ public class CharController : MonoBehaviour
                 {
                     pathReached = false;
                     
-                   
                 }
             }
         }
@@ -148,8 +156,8 @@ public class CharController : MonoBehaviour
             RaycastHit interactionInfo;
             if (Physics.Raycast(interactionRay, out interactionInfo, Mathf.Infinity))
             {
-
-
+                //inventory here
+                
 
             }
             else
@@ -163,9 +171,6 @@ public class CharController : MonoBehaviour
 
                 moveTarget = interactionInfo.point;
                 playerAgent.destination = interactionInfo.point;
-
-
-                
 
                 pathReached = false;
                 
@@ -188,6 +193,22 @@ public class CharController : MonoBehaviour
     private void OnApplicationQuit()
     {
         inventory.Container.Clear();
+    }
+
+    private void openInventory()
+    {
+        
+        if (Input.GetKeyUp(KeyCode.I) && !isActive)
+        {
+            iTween.MoveTo(inventoryPanel, iTween.Hash("islocal", true,"x", 760, "time" ,1, "easetype", "spring"));
+            //inventoryPanel.SetActive(!inventoryPanel.activeSelf);
+            isActive = true;
+        }
+        else if(Input.GetKeyUp(KeyCode.I) && isActive)
+        {
+            iTween.MoveTo(inventoryPanel, iTween.Hash("islocal", true,"x", 1200, "time" ,0.4, "easetype", "linear"));
+            isActive = false;
+        }
     }
 }
 

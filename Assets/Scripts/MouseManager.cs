@@ -13,7 +13,8 @@ public class MouseManager : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),out hit, 150, clickableLayer.value))
         {
-            if(Input.GetMouseButtonDown(0)){
+            if(Input.GetMouseButtonDown(0))
+            {
                 OnClickEnviroment.Invoke(hit.point);
                
             }

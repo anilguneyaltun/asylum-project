@@ -172,6 +172,7 @@ public class Dialog : MonoBehaviour
             if (ses.isPlaying == false)
                 ses.Play();
             continueButton.SetActive(false);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         }
         if (targetTime > 0.12f)
@@ -182,9 +183,9 @@ public class Dialog : MonoBehaviour
         {
             SceneManager.LoadScene("newScene2");
           
-        }  if (targetTime2 >= 5.0f)
+        }  if (targetTime2 >= 10.0f)
         {
-            SceneManager.LoadScene("newScene2");
+            
           
         }
 
@@ -192,10 +193,13 @@ public class Dialog : MonoBehaviour
         {
             continueButton.SetActive(true);
         }
-       
-    }
+
+        
+       print(targetTime2);
+    }   
     void fadeouct()
     {
         fadeout.CrossFadeAlpha(2, 2, false);
+        
     }
 }

@@ -50,6 +50,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4461115863164193990}
+  - component: {fileID: 92605368}
   m_Layer: 0
   m_Name: Syringe 1
   m_TagString: Untagged
@@ -64,7 +65,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4461115863164193991}
-  m_LocalRotation: {x: 0.08162737, y: -0.7711425, z: -0.10368775, w: -0.6228364}
+  m_LocalRotation: {x: 0.08162824, y: -0.7711428, z: -0.10368871, w: -0.6228357}
   m_LocalPosition: {x: -2.021521, y: 0.9039, z: -5.2803}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -72,6 +73,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -15.165, y: -257.88, z: 0.194}
+--- !u!65 &92605368
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4461115863164193991}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4215928, y: 0.2816022, z: 0.29412162}
+  m_Center: {x: -0.21079576, y: -0.35919902, z: -0.35293847}
 --- !u!1001 &4461115861745143463
 PrefabInstance:
   m_ObjectHideFlags: 0

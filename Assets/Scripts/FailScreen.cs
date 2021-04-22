@@ -7,7 +7,7 @@ public class FailScreen : MonoBehaviour
 {
     public void TryAgain()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("Scenes/Fail");
     }
 
     // Update is called once per frame
