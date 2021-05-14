@@ -14,19 +14,16 @@ public class Sense : MonoBehaviour
     protected virtual void init(){}
     protected virtual void sense(){}
     
-
     private void Start()
     {
         elapsedTime = 0.0f;
         init();
     }
-
     private void Update()
     {
         sense();
     }
 }
-
 
 public class Perspective : Sense
 {
@@ -129,16 +126,14 @@ public class AI : Perspective
             }
             destPoint = (destPoint + 1) % points.Length;
         }
-       
     }
     
-
     private void Update()
     {
         sense();
         if(!_agent.pathPending && _agent.remainingDistance < 0.1f)
             doPatrol();
        
-
+       
     }
 }

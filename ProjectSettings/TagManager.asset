@@ -7,7 +7,9 @@ TagManager:
   - Enemy
   - key
   - Inventory
-  - cube
+  - Wall
+  - Collectable
+  - Guard
   layers:
   - Default
   - TransparentFX
