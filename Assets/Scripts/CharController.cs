@@ -21,7 +21,6 @@ public class CharController : MonoBehaviour
     [HideInInspector]public GameObject currentInteractable;
     [HideInInspector]public bool isKeyGot;
     
-    public EventVector3 OnClickEnviroment;
     private NavMeshAgent playerAgent;
 
     private Animator animator;
@@ -32,23 +31,20 @@ public class CharController : MonoBehaviour
     NavMeshAgent agent;
 
     private DialogManagerScript dms;
-    private bool isConversation;
-
 
     #endregion
     public void Awake(){
         agent = GetComponent<NavMeshAgent>();
         dms = FindObjectOfType<DialogManagerScript>();
-        
-        
     }
-    [HideInInspector]
     public void SetDestination(Vector3 destination) {
-        agent.destination = destination;
-        animator.SetFloat(speedId, 2f);
-        if (agent.remainingDistance <= agent.stoppingDistance)
-            animator.SetFloat(speedId, 0f);
-        
+        if (!dms.isConversation)
+        {  
+            agent.destination = destination;
+            animator.SetFloat(speedId, 2f);
+            if (agent.remainingDistance <= agent.stoppingDistance)
+                animator.SetFloat(speedId, 0f);
+        }
     }
 
     public enum MoveFSM
@@ -93,7 +89,8 @@ public class CharController : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        inventory.Container.Clear();
+        if(!(inventory == null))
+            inventory.Container.Clear();
     }
     
     
