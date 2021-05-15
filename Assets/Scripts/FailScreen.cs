@@ -9,10 +9,4 @@ public class FailScreen : MonoBehaviour
     {
         SceneManager.LoadScene("Scenes/Fail");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

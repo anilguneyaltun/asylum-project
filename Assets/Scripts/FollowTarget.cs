@@ -11,7 +11,7 @@ public class FollowTarget : MonoBehaviour
     if(target == null)
     {
         target = GameObject.FindGameObjectWithTag("Player");
-        return;
+   
     }    
     else{
        

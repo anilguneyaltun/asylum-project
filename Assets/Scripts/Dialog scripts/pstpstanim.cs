@@ -8,7 +8,7 @@ public class pstpstanim : MonoBehaviour
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
     private int index;
-    public float typingspeed;
+    public float typingSpeed;
 
     void Start()
     {
@@ -17,18 +17,11 @@ public class pstpstanim : MonoBehaviour
 
     IEnumerator Type()
     {
-        foreach(char letter in sentences[index].ToCharArray())
+        foreach(char letter in sentences[index])
         {
             textDisplay.text += letter;
-            yield return new WaitForSeconds(typingspeed);
-        }
+            yield return new WaitForSeconds(typingSpeed);
+        }   
     }
-
-   
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
