@@ -11,6 +11,8 @@ public class DialogManagerScript : MonoBehaviour
     private Queue<string> sentences;
     private Queue<AudioClip> audioClips;
     private AudioSource _audio;
+  
+    
     #endregion
 
     #region public members
