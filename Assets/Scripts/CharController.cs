@@ -39,13 +39,13 @@ public class CharController : MonoBehaviour
     }
     public void SetDestination(Vector3 destination) {
         if (!dms.isConversation)
-        {  
+        {
             agent.destination = destination;
-            animator.SetFloat(speedId, 2f);
-            if (agent.remainingDistance <= agent.stoppingDistance)
-                animator.SetFloat(speedId, 0f);
+         
         }
     }
+    
+    
 
     public enum MoveFSM
     {
@@ -62,9 +62,8 @@ public class CharController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         speedId = Animator.StringToHash("Speed");
-        rotateId = Animator.StringToHash("Angle");
 
-        playerAgent = this.GetComponent<NavMeshAgent>();
+        playerAgent = GetComponent<NavMeshAgent>();
         canMove = true;
         pathReached = false;
         activePlayer = gameObject;
@@ -74,6 +73,8 @@ public class CharController : MonoBehaviour
     {
         if((inventory != null))
              openInventory();
+        
+        animator.SetFloat(speedId, agent.velocity.magnitude);
     }
     #endregion
 
