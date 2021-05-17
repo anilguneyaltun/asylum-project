@@ -9,33 +9,70 @@ public class MouseManager : MonoBehaviour
 {
     public LayerMask clickableLayer;
     public EventVector3 OnClickEnviroment;
+    public InventoryObject inventory;
+    
+    public Texture2D mainCursor;
+    public Texture2D moveToCursor;
 
+    
+  
+    
+    private GameObject go;
+
+    private void Start()
+    {
+       
+    }
 
     void Update(){
-
+        
+        Cursor.SetCursor(moveToCursor, Vector2.zero, CursorMode.Auto);
         RaycastHit hit;
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),out hit, 50, clickableLayer.value))
         {
+            
             bool isWall = false;
+            bool isObject = false;
             if (hit.collider.gameObject.tag == "Wall")
             {
-                //Cursor add
                 isWall = true;
-              
             }
 
+     
+            if(isWall)
+                Cursor.SetCursor(mainCursor, Vector2.zero, CursorMode.Auto);
+
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                if (hit.collider.gameObject.tag == "Collectable")
+                {
+                    go = hit.collider.gameObject;
+                    addItem();
+                }
+            }
+            
             if(Input.GetMouseButtonDown(1)) 
             {
                 if (!isWall)
-                {
                     OnClickEnviroment.Invoke(hit.point);
-                }
-
             }
            
         }
+     
     }
 
+    void addItem()
+    {
+        //ADD RANGE
+        var item = go.GetComponent<ItemObject>();
+        if (item)
+        {
+            inventory.AddItem(item.item, 1);
+            Destroy(go.gameObject);
+        }
+    }
+    
 }
 
 [System.Serializable]

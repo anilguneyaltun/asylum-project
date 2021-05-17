@@ -104,9 +104,9 @@ public class AI : Perspective
 
     private void Start()
     {
+        init();  
         animator = GetComponent<Animator>();
         speedID = Animator.StringToHash("Speed");
-        init();  
         timer = Time.deltaTime; 
         _agent = GetComponent<NavMeshAgent>();
     }
@@ -133,7 +133,7 @@ public class AI : Perspective
         sense();
         if(!_agent.pathPending && _agent.remainingDistance < 0.1f)
             doPatrol();
-       
+        
         animator.SetFloat(speedID, _agent.velocity.magnitude);
        
     }

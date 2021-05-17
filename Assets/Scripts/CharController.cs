@@ -7,67 +7,40 @@ using UnityEngine.AI;
 public class CharController : MonoBehaviour
 {
     #region
-    bool isActive;
     public InventoryObject inventory;
     public GameObject inventoryPanel;
+    public double rad = 5; 
     
-    [HideInInspector]public LayerMask clickableLayer;
-    [HideInInspector]public GameObject activePlayer;
-    [HideInInspector]public Vector3 moveTarget;
-    [HideInInspector]public bool isInteractable;
-    [HideInInspector]public bool pathReached;
-    [HideInInspector]public bool canMove;
-    [HideInInspector]public Quaternion rot;
-    [HideInInspector]public GameObject currentInteractable;
-    [HideInInspector]public bool isKeyGot;
-    
-    private NavMeshAgent playerAgent;
-
+    private bool isActive;
     private Animator animator;
-
     private int speedId;
-    private int rotateId;
-    
-    NavMeshAgent agent;
-
+    private NavMeshAgent agent;
     private DialogManagerScript dms;
-
+    
+    
+    private double circum;
+    private double PI = Math.PI;
+   
     #endregion
-    public void Awake(){
+    public void Awake()
+    {
+        circum = 2 * Math.PI * rad;
         agent = GetComponent<NavMeshAgent>();
         dms = FindObjectOfType<DialogManagerScript>();
     }
-    public void SetDestination(Vector3 destination) {
-        if (!dms.isConversation)
-        {
-            agent.destination = destination;
-         
-        }
-    }
-    
-    
-
-    public enum MoveFSM
+    public void SetDestination(Vector3 destination) 
     {
-        findPosition,
-        move,
-        turnToFace,
-        interact
+        if (!dms.isConversation)
+            agent.destination = destination;
     }
-
     #region 
     
     private void Start()
     {
         animator = GetComponent<Animator>();
-
         speedId = Animator.StringToHash("Speed");
-
-        playerAgent = GetComponent<NavMeshAgent>();
-        canMove = true;
-        pathReached = false;
-        activePlayer = gameObject;
-    }
+        
+     }
 
     void Update()
     {
@@ -94,15 +67,11 @@ public class CharController : MonoBehaviour
             inventory.Container.Clear();
     }
     
-    
-
     private void openInventory()
     {
-        
         if (Input.GetKeyUp(KeyCode.I) && !isActive)
         {
             iTween.MoveTo(inventoryPanel, iTween.Hash("islocal", true,"x", 760, "time" ,1, "easetype", "spring"));
-            //inventoryPanel.SetActive(!inventoryPanel.activeSelf);
             isActive = true;
         }
         else if(Input.GetKeyUp(KeyCode.I) && isActive)
@@ -111,6 +80,8 @@ public class CharController : MonoBehaviour
             isActive = false;
         }
     }
+
+   
 }
 
 
