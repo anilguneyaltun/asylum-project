@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Syringe
   m_EditorClassIdentifier: 
   prefab: {fileID: 6440211013242534540, guid: b0b1f38fe5a9b48dcb040655c02780a6, type: 3}
-  type: 0
+  type: 2
   description: A Syringe to kill people
