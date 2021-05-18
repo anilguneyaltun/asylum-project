@@ -42,6 +42,7 @@ public class InventorySlot
     public void AddAmount(int value)
     {
         amount += value;
+        Debug.Log(amount +"  " + item.name);
     }
 
 }

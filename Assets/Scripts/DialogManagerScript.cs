@@ -11,6 +11,8 @@ public class DialogManagerScript : MonoBehaviour
     private Queue<string> sentences;
     private Queue<AudioClip> audioClips;
     private AudioSource _audio;
+  
+    
     #endregion
 
     #region public members
@@ -36,11 +38,15 @@ public class DialogManagerScript : MonoBehaviour
         nameText.text = dialog.name;
         audioClips.Clear();
         sentences.Clear();
-        
-        foreach (AudioClip audio in dialog.audioClips)
+
+        if (audioClips.Count != 0)
         {
-            audioClips.Enqueue(audio);
+            foreach (AudioClip item in dialog.audioClips)
+            {
+                audioClips.Enqueue(item);
+            }
         }
+       
         
         foreach (string sentence in dialog.sentences)
         { 
