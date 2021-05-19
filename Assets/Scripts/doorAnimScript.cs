@@ -7,11 +7,32 @@ using UnityEngine;
 public class doorAnimScript : MonoBehaviour
 {
     public GameObject animObject;
-
+    
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
+        {
+            var go = other.gameObject.GetComponent<CharController>();
+            if (go.inventory.checkKeycard())
+            {
+                if (gameObject.CompareTag("RedDoor") && go.inventory.checkColor() == KeyColor.Red)
+                    MoveToPosition();
+                if (gameObject.CompareTag("GreenDoor") && go.inventory.checkColor() == KeyColor.Green)
+                    MoveToPosition();
+                if (gameObject.CompareTag("BlueDoor") && go.inventory.checkColor() == KeyColor.Blue)
+                    MoveToPosition();
+                else
+                    print("no keycard");
+                
+            }
+        }
+       
+        if (gameObject.CompareTag("NormalDoor"))
+        {
             MoveToPosition();
+        }
+            
     }
     
     private void OnTriggerExit(Collider other)

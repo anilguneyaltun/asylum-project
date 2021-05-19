@@ -18,8 +18,8 @@ public class MouseManager : MonoBehaviour
 
     void Update(){
         
-        if(!Application.isEditor)
-            Cursor.SetCursor(moveToCursor, Vector2.zero, CursorMode.Auto);
+       // if(!Application.isEditor)
+          //  Cursor.SetCursor(moveToCursor, Vector2.zero, CursorMode.Auto);
         RaycastHit hit;
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),out hit, 50, clickableLayer.value))
         {
@@ -48,7 +48,6 @@ public class MouseManager : MonoBehaviour
                 if (!isWall)
                     OnClickEnviroment.Invoke(hit.point);
             }
-           
         }
      
     }

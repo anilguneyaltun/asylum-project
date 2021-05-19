@@ -50,17 +50,9 @@ public class CharController : MonoBehaviour
         animator.SetFloat(speedId, agent.velocity.magnitude);
     }
     #endregion
-
-    public void OnTriggerEnter(Collider other)
-    {
-        var item = other.GetComponent<ItemObject>();
-        if (item)
-        {
-            inventory.AddItem(item.item, 1);
-            Destroy(other.gameObject);
-        }
-    }
-
+    
+    
+    
     private void OnApplicationQuit()
     {
         if(!(inventory == null))
