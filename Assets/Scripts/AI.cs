@@ -5,12 +5,13 @@ using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
 
 public class Sense : MonoBehaviour
 {
     [Header("AI Senses")] 
-    public float detectionRate = 1.0f;
+    public float detectionRate = 0.1f;
     protected float elapsedTime = 0.0f;
     protected virtual void init(){}
     protected virtual void sense(){}
@@ -38,6 +39,7 @@ public class Perspective : Sense
  protected override void init()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        
     }
 
     protected override void sense()
@@ -59,15 +61,14 @@ public class Perspective : Sense
             if(Physics.Raycast(transform.position, rayDir, out hit, viewRange))
             {
                 if (hit.collider.CompareTag("Player"))
-                {
-                    print("hit");
-                }
+                    SceneManager.LoadScene("Fail");
             }
         }
     }
 
     public void OnDrawGizmos()
     {
+        
         
         Vector3 frontRay = transform.position + (transform.forward * viewRange);
         
@@ -137,4 +138,6 @@ public class AI : Perspective
         animator.SetFloat(speedID, _agent.velocity.magnitude);
        
     }
+    
+    
 }
