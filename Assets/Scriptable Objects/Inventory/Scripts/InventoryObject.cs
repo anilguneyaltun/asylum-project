@@ -26,7 +26,7 @@ public class InventoryObject : ScriptableObject
         {
             Container.Add(new InventorySlot(_item, _amount));
         }
-    }
+    } 
 
     public bool checkKeycard()
     {
@@ -34,10 +34,7 @@ public class InventoryObject : ScriptableObject
         for (int i = 0; i < Container.Count; i++)
         {
             if (Container[i].item.type == ItemType.KeyCard)
-            {
-                
                 hasKeycard = true;
-            }
         }
         return hasKeycard;
     }
@@ -69,7 +66,16 @@ public class InventoryObject : ScriptableObject
         return color;
     }
 
-
+    public bool checkEquipment()
+    {
+        bool isEquipped = false;
+        for (int i = 0; i < Container.Count; i++)
+        {
+            if (Container[i].item.type == ItemType.Equipment)
+                isEquipped = true;
+        }
+        return isEquipped;
+    }
 
     [System.Serializable]
     public class InventorySlot

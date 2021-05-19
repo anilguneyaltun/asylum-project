@@ -7,14 +7,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Keycard Object", menuName = "Inventory System/Items/Keycard")]
 public class KeycardObject : Item
 {
-  public string color;
-  
   public void Awake()
   {
     type = ItemType.KeyCard;
-  }
-
- 
-  
-
+  } 
 }
