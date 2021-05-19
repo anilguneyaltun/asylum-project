@@ -11,6 +11,8 @@ public class doorAnimScript : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        print("hit");
+        
         if (other.gameObject.CompareTag("Player"))
         {
             var go = other.gameObject.GetComponent<CharController>();

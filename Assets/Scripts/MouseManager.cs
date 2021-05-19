@@ -46,9 +46,10 @@ public class MouseManager : MonoBehaviour
                     ItemInfo.getObject(go);
                 }
 
-                if (inventory.checkEquipment())
+                if (hit.collider.gameObject.tag == "Doctor" || hit.collider.gameObject.tag == "Guard")
                 {
-                    if (hit.collider.gameObject.tag == "Doctor")
+                    
+                    if (inventory.checkEquipment())
                     {
                         isAttack = true;
                         StartCoroutine(waitForSec());
