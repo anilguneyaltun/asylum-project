@@ -10,6 +10,11 @@ TagManager:
   - Wall
   - Collectable
   - Guard
+  - BlueDoor
+  - RedDoor
+  - GreenDoor
+  - NormalDoor
+  - Doctor
   layers:
   - Default
   - TransparentFX
