@@ -16,8 +16,7 @@ public class CharController : MonoBehaviour
     private int speedId;
     private NavMeshAgent agent;
     private DialogManagerScript dms;
-    
-    
+
     private double circum;
     private double PI = Math.PI;
    
@@ -30,7 +29,7 @@ public class CharController : MonoBehaviour
     }
     public void SetDestination(Vector3 destination) 
     {
-        if (!dms.isConversation)
+        if (!dms.isConversation) 
             agent.destination = destination;
     }
     #region 
@@ -44,22 +43,25 @@ public class CharController : MonoBehaviour
 
     void Update()
     {
+        
         if((inventory != null))
              openInventory();
         
         animator.SetFloat(speedId, agent.velocity.magnitude);
+    
+        if (MouseManager.isAttacking())
+        {
+            animator.SetBool("isAttack", true);
+        }
+        else
+        {
+            animator.SetBool("isAttack", false);
+        }
+
+           
     }
     #endregion
-
-    public void OnTriggerEnter(Collider other)
-    {
-        var item = other.GetComponent<ItemObject>();
-        if (item)
-        {
-            inventory.AddItem(item.item, 1);
-            Destroy(other.gameObject);
-        }
-    }
+    
 
     private void OnApplicationQuit()
     {

@@ -12,7 +12,7 @@ public class DisplayInventory : MonoBehaviour
     public int ySpace;
     public int numOfCol;
 
-    private Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
+    private Dictionary<InventoryObject.InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventoryObject.InventorySlot, GameObject>();
     
     void Start()
     {

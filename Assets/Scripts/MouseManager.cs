@@ -14,27 +14,30 @@ public class MouseManager : MonoBehaviour
     public Texture2D mainCursor;
     public Texture2D moveToCursor;
     
+    float timer = 0;
+    private CharController charGO;
     private GameObject go;
+    private static bool isAttack = false;
+    private void Start()
+    {
+        timer = Time.deltaTime;
+        charGO = FindObjectOfType<CharController>();
+    }
 
     void Update(){
         
-        if(!Application.isEditor)
-            Cursor.SetCursor(moveToCursor, Vector2.zero, CursorMode.Auto);
+       // if(!Application.isEditor)
+          //  Cursor.SetCursor(moveToCursor, Vector2.zero, CursorMode.Auto);
         RaycastHit hit;
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),out hit, 50, clickableLayer.value))
         {
             
-            bool isWall = false;
-            bool isObject = false;
-            bool isUI = false;
-            if (hit.collider.gameObject.tag == "Wall")
-            {
-                isWall = true;
-            }
+            bool isWall = hit.collider.gameObject.tag == "Wall";
+            
             if(isWall)
                 Cursor.SetCursor(mainCursor, Vector2.zero, CursorMode.Auto);
             
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 if (hit.collider.gameObject.tag == "Collectable")
                 {
@@ -42,17 +45,39 @@ public class MouseManager : MonoBehaviour
                     addItem();
                     ItemInfo.getObject(go);
                 }
+
+                if (hit.collider.gameObject.tag == "Doctor" || hit.collider.gameObject.tag == "Guard")
+                {
+                    
+                    if (inventory.checkEquipment())
+                    {
+                        isAttack = true;
+                        StartCoroutine(waitForSec());
+                        
+                        GameObject go = hit.collider.gameObject;
+                        Animator animator = go.gameObject.GetComponent<Animator>();
+                        animator.SetBool("isDead", true);
+                        
+                        
+                    }
+                }
+               
+    
             }
             if(Input.GetMouseButtonDown(1)) 
             {
                 if (!isWall)
                     OnClickEnviroment.Invoke(hit.point);
             }
-           
         }
      
     }
 
+    IEnumerator waitForSec()
+    {
+        yield return new WaitForSeconds(0.25f);
+        isAttack = false;
+    }
     void addItem()
     {
         //TODO: ADD RANGE
@@ -63,7 +88,13 @@ public class MouseManager : MonoBehaviour
             Destroy(go.gameObject);
         }
     }
-    
+
+    public static bool isAttacking()
+    {
+        return isAttack;
+    }
+
+  
 }
 
 [System.Serializable]

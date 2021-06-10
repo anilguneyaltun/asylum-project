@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b515c0e29c41b491488b56003334e601, type: 3}
+  m_Script: {fileID: 11500000, guid: df676b386404e492faf3c6bc55d8d111, type: 3}
   m_Name: Syringe
   m_EditorClassIdentifier: 
   prefab: {fileID: 6440211013242534540, guid: b0b1f38fe5a9b48dcb040655c02780a6, type: 3}
   type: 2
-  description: A Syringe to kill people
+  description: A syringe, may be dangerous.
+  color: 0
+  equipment: 0
