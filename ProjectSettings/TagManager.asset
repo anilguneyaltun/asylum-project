@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - Collectable
   - Guard
+  - keypad
   layers:
   - Default
   - TransparentFX
