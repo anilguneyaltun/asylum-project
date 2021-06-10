@@ -1888,6 +1888,7 @@ MonoBehaviour:
   displayText: {fileID: 615809299}
   codetimer: 0
   codetimer2: 0
+  isOpen: 0
 --- !u!1 &1025242696
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,12 +7,11 @@ using UnityEngine.SceneManagement;
 public class CodeInput : MonoBehaviour
 {
     
-    public GameObject objectToDisable;
-    public GameObject objectToDisable2;
+    
 
     public GameObject objectToEnable;
     
-    public string curPassword = "1234";
+    public string curPassword = "2546";
     public string input;
     public Text displayText;
 
@@ -22,6 +21,7 @@ public class CodeInput : MonoBehaviour
     public float codetimer = 0.0f;
     public float codetimer2 = 0.0f;
     Animator textanim;
+    public bool isOpen;
 
     void Start()
     {
@@ -31,7 +31,6 @@ public class CodeInput : MonoBehaviour
         textanim = displayText.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {if(btnClicked==numOfGuesses)
        { 
@@ -41,8 +40,9 @@ public class CodeInput : MonoBehaviour
                 btnClicked = 0;
                 Debug.Log("correct");
                 textanim.enabled = false;
+                isOpen = true;
 
-            }
+        }
       
      else
      {
@@ -50,9 +50,9 @@ public class CodeInput : MonoBehaviour
                 textanim.enabled = true;
 
 
-            }
-            if (codetimer2 >= 1.5f) 
-            {
+     }
+      if (codetimer2 >= 1.5f) 
+      {
                 input = "";
                 displayText.text = input.ToString();
                 btnClicked = 0;
@@ -61,14 +61,21 @@ public class CodeInput : MonoBehaviour
                 displayText.GetComponent<Text>().color = Color.black;
                 textanim.enabled = false;
 
-            }
+      }
            
      }
 
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            keypadScreen = true;
+           
+        }
+    }
     void OnGUI()
-    { 
+    {/* 
         if (Input.GetMouseButton(0))
         {
             RaycastHit hit;
@@ -87,12 +94,11 @@ public class CodeInput : MonoBehaviour
                 }
             }
 
-        }
+        }*/
         if(keypadScreen)
         {
             objectToEnable.SetActive(true);
-            objectToDisable.SetActive(false);
-            objectToDisable2.SetActive(false);
+            
         }
         
     }
@@ -101,8 +107,7 @@ public class CodeInput : MonoBehaviour
         switch(valueEntered)
         {
             case "Q":
-                objectToDisable.SetActive(true);
-                objectToDisable2.SetActive(true);
+              
                 objectToEnable.SetActive(false);
                 btnClicked = 0;
                 keypadScreen = false;
