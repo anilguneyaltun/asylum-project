@@ -58,7 +58,7 @@ public class CodeInput : MonoBehaviour
                 btnClicked = 0;
                 codetimer2 = 0f;
                 Debug.Log("invalid");
-                displayText.GetComponent<Text>().color = Color.black;
+                displayText.GetComponent<Text>().color = Color.white;
                 textanim.enabled = false;
 
       }
