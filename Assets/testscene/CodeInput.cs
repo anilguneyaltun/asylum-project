@@ -14,6 +14,7 @@ public class CodeInput : MonoBehaviour
     public string curPassword = "2546";
     public string input;
     public Text displayText;
+    public GameObject displaytextField;
 
     private bool keypadScreen;
     private float btnClicked = 0;
@@ -21,6 +22,7 @@ public class CodeInput : MonoBehaviour
     public float codetimer = 0.0f;
     public float codetimer2 = 0.0f;
     Animator textanim;
+    Animator spriteanim;
     public bool isOpen;
 
     void Start()
@@ -29,30 +31,29 @@ public class CodeInput : MonoBehaviour
         btnClicked = 0;
         numOfGuesses = curPassword.Length;
         textanim = displayText.GetComponent<Animator>();
+        spriteanim = displaytextField.GetComponent<Animator>();
+
     }
 
     void Update()
-    {if(btnClicked==numOfGuesses)
-       { 
-        if(input == curPassword)
+    {
+        if (btnClicked == numOfGuesses)
         {
-                input = "";
-                btnClicked = 0;
-                Debug.Log("correct");
-                textanim.enabled = false;
-                isOpen = true;
+            if (input == curPassword)
+            {
+                codetimer += Time.deltaTime;
+                spriteanim.enabled = true;
 
-        }
-      
-     else
-     {
+            }
+            else
+            {
                 codetimer2 += Time.deltaTime;
                 textanim.enabled = true;
 
 
-     }
-      if (codetimer2 >= 1.5f) 
-      {
+            }
+            if (codetimer2 >= 1.5f)
+            {
                 input = "";
                 displayText.text = input.ToString();
                 btnClicked = 0;
@@ -61,9 +62,19 @@ public class CodeInput : MonoBehaviour
                 displayText.GetComponent<Text>().color = Color.white;
                 textanim.enabled = false;
 
-      }
-           
-     }
+            }
+            if(codetimer>=1.5f)
+            {
+                input = "";
+                btnClicked = 0;
+                Debug.Log("correct");
+                textanim.enabled = false;
+                isOpen = true;
+                objectToEnable.SetActive(false);
+            }
+
+        }
+        
 
     }
     private void OnTriggerEnter(Collider other)
