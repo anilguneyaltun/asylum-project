@@ -15,6 +15,7 @@ TagManager:
   - GreenDoor
   - NormalDoor
   - Doctor
+  - smth
   layers:
   - Default
   - TransparentFX

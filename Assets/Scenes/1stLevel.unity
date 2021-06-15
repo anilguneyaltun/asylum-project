@@ -2731,6 +2731,8 @@ GameObject:
   - component: {fileID: 463722974}
   - component: {fileID: 463722973}
   - component: {fileID: 463722976}
+  - component: {fileID: 463722978}
+  - component: {fileID: 463722977}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2797,7 +2799,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463722972}
   m_LocalRotation: {x: 0.27781588, y: -0.36497167, z: 0.1150751, w: 0.8811196}
-  m_LocalPosition: {x: 2.16, y: 9.24, z: -20.41}
+  m_LocalPosition: {x: 1.5, y: 8, z: -19.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2815,6 +2817,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976213a5998f44c6fb93a27202775108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &463722977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463722972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 15f158f3f1253364caedc5ab8a223123, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!114 &463722978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463722972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 463722975}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 23
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 1
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 1
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1001 &479446267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6347,7 +6426,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogue:
-    audioSource: {fileID: 1820032390}
     name: Conversation with Prisoner
     sentences:
     - "Prisoner: Psst breda! , Yoo overhere! , Hey come\u2019n! Breda look up!"
@@ -6376,6 +6454,7 @@ MonoBehaviour:
     - "(your heart starts to beat faster and it\u2019s hard to breath. Your vision
       is fading out. Suddenly it\u2019s all darkness.)"
     - "Prisoner: Cmon\u2019 man not again\u2026"
+    audioSource: {fileID: 1820032390}
     audioClips:
     - {fileID: 8300000, guid: 0934f5a4a79baad43ac4fbfb69492501, type: 3}
     - {fileID: 8300000, guid: 5e5ad4b910096914489979dd02f9dc24, type: 3}
@@ -10137,6 +10216,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  inventory: {fileID: 0}
+  mainCursor: {fileID: 0}
+  moveToCursor: {fileID: 0}
 --- !u!4 &2090748378
 Transform:
   m_ObjectHideFlags: 0
