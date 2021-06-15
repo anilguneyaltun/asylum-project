@@ -10,17 +10,25 @@ public class Shooting : MonoBehaviour
     private int damage;
     public LayerMask clickableLayer;
     private MouseManager MM;
+    private Vector3 pos;
+    private Vector3 rayEndPos;
+    private LineRenderer lr; 
     
    // [SerializeField] private GameObject shootingDir;
     
     private void Start()
     {
         MM = FindObjectOfType<MouseManager>();
+        lr.GetComponent<LineRenderer>();
+        
     }
 
     private void FixedUpdate()
     {
+        
         doShoot();
+        renderLine();
+        
     }
 
     private void doShoot()
@@ -38,4 +46,15 @@ public class Shooting : MonoBehaviour
             }
         }
     }
+
+    void renderLine()
+    {
+        
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, range))
+        {
+            lr.SetPosition(0, hit.point);
+        }
+    }
+    
 }

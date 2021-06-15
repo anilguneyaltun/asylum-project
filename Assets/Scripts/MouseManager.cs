@@ -13,8 +13,9 @@ public class MouseManager : MonoBehaviour
     public InventoryObject inventory;
     public Texture2D mainCursor;
     public Texture2D moveToCursor;
-    
-    float timer = 0;
+
+    private Transform target;
+    private float timer = 0;
     private CharController charGO;
     private GameObject go;
     private static bool isAttack = false;
@@ -34,6 +35,7 @@ public class MouseManager : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),out hit, 50, clickableLayer.value))
         {
+            target = hit.transform;
             
             bool isWall = hit.collider.gameObject.tag == "Wall";
             
@@ -56,6 +58,10 @@ public class MouseManager : MonoBehaviour
                         print("hit");
                         isShooted = true;
                     }
+                    else
+                    {
+                        isShooted = false;
+                    }
                 }
 
                 if (hit.collider.gameObject.tag == "Doctor" || hit.collider.gameObject.tag == "Guard")
@@ -69,7 +75,6 @@ public class MouseManager : MonoBehaviour
                         GameObject go = hit.collider.gameObject;
                         Animator animator = go.gameObject.GetComponent<Animator>();
                         animator.SetBool("isDead", true);
-                        
                         
                     }
                 }
@@ -110,6 +115,12 @@ public class MouseManager : MonoBehaviour
     {
         return isShooted;
     }
+
+    public Transform lookToMousePos()
+    {
+        return target;
+    }
+    
   
 }
 

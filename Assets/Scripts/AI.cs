@@ -119,6 +119,7 @@ public class AI : Perspective
 
     void doPatrol()
     {
+        
         if (isPatrolling)
         {
             if (points.Length == 0)
