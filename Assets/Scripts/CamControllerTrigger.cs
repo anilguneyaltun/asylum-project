@@ -7,14 +7,22 @@ public class CamControllerTrigger : MonoBehaviour
 {
     [SerializeField]
     public List<GameObject> _gameObjects;
-    //TODO: also disable the animations
+    CodeInput ci;
+    public bool isOpen;
+     void Start()
+     {
+        ci = GameObject.FindObjectOfType<CodeInput>();
+        isOpen = ci.isOpen;
+     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
-        {
+        { 
             for (int i = 0; i < _gameObjects.Capacity; i++)
             {
-                _gameObjects[i].SetActive(false);
+                if (isOpen)
+                    _gameObjects[i].SetActive(false);
+
             }
         }
     }

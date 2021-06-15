@@ -16,6 +16,7 @@ TagManager:
   - NormalDoor
   - Doctor
   - smth
+
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - UI
   - 
   - 
-  - ClickableLayer
+  - 
   - 
   - 
   - 
