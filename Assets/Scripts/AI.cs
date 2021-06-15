@@ -29,17 +29,15 @@ public class Sense : MonoBehaviour
 
 public class Perspective : Sense
 {
-    
-    
     [SerializeField] private int FOV = 10;
     [SerializeField] private int viewRange = 50;
     private Vector3 rayDir;
-    private Transform playerTransform;
-
+    public Transform playerTransform;
+    public bool isDetected = false;
+    
  protected override void init()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        
     }
 
     protected override void sense()
@@ -51,35 +49,40 @@ public class Perspective : Sense
         }
     }
 
+  
     public void Detect()
     {
         RaycastHit hit;
-        rayDir = playerTransform.position - transform.position;
+       // rayDir = playerTransform.position - transform.position;
+       rayDir = transform.forward;
 
         if (Vector3.Angle(rayDir, transform.forward) < FOV)
         {
             if(Physics.Raycast(transform.position, rayDir, out hit, viewRange))
             {
-                if (hit.collider.CompareTag("Player"))
-                    SceneManager.LoadScene("Fail");
+                if (hit.collider.tag == "Player")
+                {
+                    isDetected = true;
+                }
+                else
+                {
+                    isDetected = false;
+                }
             }
+         
         }
     }
+    
 
     public void OnDrawGizmos()
     {
-        
-        
         Vector3 frontRay = transform.position + (transform.forward * viewRange);
         
         Vector3 leftRay = frontRay;
         leftRay.x += (FOV * 0.5f);
         Vector3 rightRay = frontRay;
-        rightRay.x -= FOV;
-
-        Debug.DrawLine(transform.position, frontRay, Color.red);
-        Debug.DrawLine(transform.position, rightRay, Color.green);
-        Debug.DrawLine(transform.position, leftRay, Color.green);
+        rightRay.x -= FOV * 0.5f;
+        
     }
 }
 
@@ -92,6 +95,8 @@ public class AI : Perspective
     private float timer;
     private Animator animator;
     private int speedID;
+    private bool isArrested; 
+    
     #endregion
 
     #region public members
@@ -128,16 +133,39 @@ public class AI : Perspective
             destPoint = (destPoint + 1) % points.Length;
         }
     }
+
+    void moveToPlayer()
+    {
+        
+            if (!(_agent.remainingDistance < 2.0f))
+            {
+                isPatrolling = false;
+                _agent.destination = playerTransform.position;
+                isArrested = true;
+            }
+            else
+            {
+                isPatrolling = true;
+                isDetected = false;
+            }
+    }
+
+    
     
     private void Update()
     {
         sense();
         if(!_agent.pathPending && _agent.remainingDistance < 0.1f)
             doPatrol();
+        if(isDetected)
+            moveToPlayer();
         
         animator.SetFloat(speedID, _agent.velocity.magnitude);
-       
     }
-    
+
+    public bool arrest()
+    {
+        return isArrested;
+    }
     
 }

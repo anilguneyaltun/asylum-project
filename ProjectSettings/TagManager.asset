@@ -3,7 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - key
+  - Inventory
+  - Wall
+  - Collectable
+  - Guard
+  - BlueDoor
+  - RedDoor
+  - GreenDoor
+  - NormalDoor
+  - Doctor
+  - smth
+
   layers:
   - Default
   - TransparentFX

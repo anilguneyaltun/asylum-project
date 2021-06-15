@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 
-public class doorAnimScript : MonoBehaviour
+public class DoorAnimScript : MonoBehaviour
 {
     public GameObject animObject;
     
@@ -26,7 +26,7 @@ public class doorAnimScript : MonoBehaviour
                     MoveToPosition();
                 else
                     print("no keycard");
-                
+               
             }
         }
        
