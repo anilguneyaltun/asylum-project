@@ -19,7 +19,8 @@ public class MouseManager : MonoBehaviour
     private GameObject go;
     private static bool isAttack = false;
     private bool hasGun = false;
-    private bool isShooted; 
+    private bool isShooted;
+    private bool isDead;
     private void Start()
     {
         timer = Time.deltaTime;
@@ -63,6 +64,7 @@ public class MouseManager : MonoBehaviour
                     
                     if (inventory.checkEquipment())
                     {
+                      
                         isAttack = true;
                         StartCoroutine(waitForSec());
                         
