@@ -7,7 +7,8 @@ using UnityEngine;
 public class DoorAnimScript : MonoBehaviour
 {
     public GameObject animObject;
-    
+    public AudioSource doorOpen;
+    public AudioSource doorClose;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -45,11 +46,14 @@ public class DoorAnimScript : MonoBehaviour
 
     public void MoveToPosition()
     {
+        
+           
         iTween.MoveTo(animObject, iTween.Hash( "islocal", true,"z", -3,"time",1, "easetype", "EaseInCirc" ));
     }
     
     public void MoveBackToPosition()
     {
         iTween.MoveTo(animObject, iTween.Hash("islocal", true, "z", -4.727,"time",1, "easetype", "EaseInCirc", "delay", 1));
+
     }
 }
