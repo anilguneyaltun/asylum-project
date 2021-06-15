@@ -16,12 +16,12 @@ TagManager:
   - NormalDoor
   - Doctor
   - smth
-
+  - keypad
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Clickable Layer
   - Water
   - UI
   - 

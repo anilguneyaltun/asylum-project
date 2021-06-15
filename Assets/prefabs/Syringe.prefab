@@ -51,7 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4461115863164193990}
   - component: {fileID: 92605368}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Syringe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,9 +137,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 106.471
       objectReference: {fileID: 0}
+    - target: {fileID: -5004740735922860266, guid: 32d9ac31dacd743b6bf85ed66e3efcfd, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1152227022884027691, guid: 32d9ac31dacd743b6bf85ed66e3efcfd, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 32d9ac31dacd743b6bf85ed66e3efcfd, type: 3}
       propertyPath: m_Name
       value: syringe
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 32d9ac31dacd743b6bf85ed66e3efcfd, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953606483559150473, guid: 32d9ac31dacd743b6bf85ed66e3efcfd, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32d9ac31dacd743b6bf85ed66e3efcfd, type: 3}

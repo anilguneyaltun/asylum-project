@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class CodeInput : MonoBehaviour
 {
     
-    
-
     public GameObject objectToEnable;
     
     public string curPassword = "2546";
