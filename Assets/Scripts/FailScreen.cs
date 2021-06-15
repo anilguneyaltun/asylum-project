@@ -7,6 +7,7 @@ public class FailScreen : MonoBehaviour
 {
     public void TryAgain()
     {
+        
         SceneManager.LoadScene("Scenes/2ndLevel");
     }
 }
