@@ -1,8 +1,41 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    [SerializeField]private float range = 100.0f;
+    private int damage;
+    public LayerMask clickableLayer;
+    private MouseManager MM;
+    
+   // [SerializeField] private GameObject shootingDir;
+    
+    private void Start()
+    {
+        MM = FindObjectOfType<MouseManager>();
+    }
 
+    private void FixedUpdate()
+    {
+        doShoot();
+    }
+
+    private void doShoot()
+    {
+        Vector3 fwd = transform.TransformDirection(Vector3.forward);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, fwd, out hit,Mathf.Infinity, clickableLayer))
+        {
+            if (MM.isShooting())
+            {
+                if (hit.collider.name == "Guard")
+                {
+                    print("y");
+                }
+            }
+        }
+    }
 }

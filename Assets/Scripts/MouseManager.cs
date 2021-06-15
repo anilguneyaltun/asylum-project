@@ -18,10 +18,13 @@ public class MouseManager : MonoBehaviour
     private CharController charGO;
     private GameObject go;
     private static bool isAttack = false;
+    private bool hasGun = false;
+    private bool isShooted; 
     private void Start()
     {
         timer = Time.deltaTime;
         charGO = FindObjectOfType<CharController>();
+        hasGun = true;
     }
 
     void Update(){
@@ -44,6 +47,15 @@ public class MouseManager : MonoBehaviour
                     go = hit.collider.gameObject;
                     addItem();
                     ItemInfo.getObject(go);
+                }
+            
+                if (hasGun)
+                {
+                    if (hit.collider.gameObject.tag == "Guard")
+                    {
+                        print("hit");
+                        isShooted = true;
+                    }
                 }
 
                 if (hit.collider.gameObject.tag == "Doctor" || hit.collider.gameObject.tag == "Guard")
@@ -94,6 +106,10 @@ public class MouseManager : MonoBehaviour
         return isAttack;
     }
 
+    public bool isShooting()
+    {
+        return isShooted;
+    }
   
 }
 
