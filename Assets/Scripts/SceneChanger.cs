@@ -17,8 +17,8 @@ public class SceneChanger : MonoBehaviour
 
     public void changeFirstScene()
     {
-        SceneManager.LoadScene("2ndLevel");
-       
+        LoadNextLevel();
+
     }
     public void LoadNextLevel()
     {

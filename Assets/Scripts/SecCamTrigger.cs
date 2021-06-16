@@ -10,7 +10,8 @@ public class SecCamTrigger : MonoBehaviour
    {
       if (other.gameObject.CompareTag("Player"))
       {
-         SceneManager.LoadScene("Scenes/Fail");
+            PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene("Scenes/Fail");
       }
    }
 }

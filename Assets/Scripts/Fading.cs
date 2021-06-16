@@ -10,7 +10,7 @@ public class Fading : MonoBehaviour
    public GameObject buttonGO;
    public void ScaleTo()
    {
-      iTween.ScaleTo(go, iTween.Hash("scale", new Vector3(0,0,0), "time" , 5, "easetype", "linear"));
+      iTween.ScaleTo(go, iTween.Hash("scale", new Vector3(0,0,0), "time" , 2, "easetype", "linear"));
       buttonGO.SetActive(false);
    }
 }
