@@ -7,12 +7,17 @@ using UnityEngine;
 public class DoorAnimScript : MonoBehaviour
 {
     public GameObject animObject;
-    public AudioSource doorOpen;
-    public AudioSource doorClose;
-    
+    private AudioSource DoorSound;
+    [SerializeField]
+    private AudioClip[] doorClips;
+
+    private void Awake()
+    {
+        DoorSound = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter(Collider other)
     {
-        print("hit");
+        
         
         if (other.gameObject.CompareTag("Player"))
         {
@@ -46,14 +51,13 @@ public class DoorAnimScript : MonoBehaviour
 
     public void MoveToPosition()
     {
-        
-           
-        iTween.MoveTo(animObject, iTween.Hash( "islocal", true,"z", -3,"time",1, "easetype", "EaseInCirc" ));
+        iTween.MoveTo(animObject, iTween.Hash( "islocal", true,"z", -3,"time",0.7, "easetype", "EaseInCirc" ));
+        DoorSound.PlayOneShot(doorClips[0]);
     }
     
     public void MoveBackToPosition()
     {
-        iTween.MoveTo(animObject, iTween.Hash("islocal", true, "z", -4.727,"time",1, "easetype", "EaseInCirc", "delay", 1));
-
+        iTween.MoveTo(animObject, iTween.Hash("islocal", true, "z", -4.727,"time",0.7, "easetype", "EaseInCirc", "delay", 1));
+        DoorSound.PlayOneShot(doorClips[1]);
     }
 }

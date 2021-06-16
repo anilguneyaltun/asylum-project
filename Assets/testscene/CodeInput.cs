@@ -22,6 +22,8 @@ public class CodeInput : MonoBehaviour
     Animator textanim;
     Animator spriteanim;
     public bool isOpen;
+    public AudioSource keycodeAudio;
+
 
     void Start()
     {
@@ -80,7 +82,7 @@ public class CodeInput : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             keypadScreen = true;
-           
+            keycodeAudio.Play();
         }
     }
     void OnGUI()

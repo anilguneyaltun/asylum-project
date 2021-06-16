@@ -124,6 +124,11 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 4b4db609b2cd8498b890ea4313c6b140, type: 2}
   inventoryPanel: {fileID: 0}
   rad: 5
+  clips:
+  - {fileID: 8300000, guid: 23d0da64f2cd3f1469d472b7690a5287, type: 3}
+  - {fileID: 8300000, guid: 6fd459f17782b7a47973cc59de53c103, type: 3}
+  - {fileID: 8300000, guid: b5d9e55c4ca5ed540a4b13be8a1868ae, type: 3}
+  - {fileID: 8300000, guid: 661ae9f0e7e289a4e84169903cef9a3c, type: 3}
 --- !u!82 &1362557974
 AudioSource:
   m_ObjectHideFlags: 0

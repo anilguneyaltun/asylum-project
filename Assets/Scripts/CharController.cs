@@ -19,13 +19,16 @@ public class CharController : MonoBehaviour
 
     private double circum;
     private double PI = Math.PI;
-   
+
+    
+
     #endregion
     public void Awake()
     {
         circum = 2 * Math.PI * rad;
         agent = GetComponent<NavMeshAgent>();
         dms = FindObjectOfType<DialogManagerScript>();
+        
     }
     public void SetDestination(Vector3 destination) 
     {
@@ -52,6 +55,7 @@ public class CharController : MonoBehaviour
         if (MouseManager.isAttacking())
         {
             animator.SetBool("isAttack", true);
+           
         }
         else
         {
@@ -82,8 +86,9 @@ public class CharController : MonoBehaviour
             isActive = false;
         }
     }
-
    
+
+
 }
 
 
