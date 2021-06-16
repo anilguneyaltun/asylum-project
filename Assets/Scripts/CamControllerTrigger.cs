@@ -13,6 +13,7 @@ public class CamControllerTrigger : MonoBehaviour
      {
         ci = GameObject.FindObjectOfType<CodeInput>();
         isOpen = ci.isCorrect();
+
      }
     private void OnTriggerEnter(Collider other)
     {

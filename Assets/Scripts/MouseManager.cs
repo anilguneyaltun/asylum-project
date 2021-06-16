@@ -24,15 +24,17 @@ public class MouseManager : MonoBehaviour
     private bool isDead;
     private DoctorAI doctorAI;
     private AudioSource audioSource;
-   
-    
-    [SerializeField] private AudioClip[] soundClips;
+    private LockerAnimScript animScrip;
+
+
+        [SerializeField] private AudioClip[] soundClips;
     
     private bool isDoubleClicked;
     private bool timerRunning;
     private float timerForDoubleClick;
     private void Start()
     {
+        animScrip = FindObjectOfType<LockerAnimScript>();
         audioSource = GetComponent<AudioSource>();
         timer = Time.deltaTime;
         charGO = FindObjectOfType<CharController>();
@@ -66,7 +68,10 @@ public class MouseManager : MonoBehaviour
                             inventoryObject.RemoveItem(_item, 1);
                         }
                     }
-                    
+                    if (hit.collider.gameObject.tag == "Locker")
+                    {
+                        animScrip.openLocker();
+                    }
                     if (hit.collider.gameObject.tag == "Collectable")
                     {
                         go = hit.collider.gameObject;

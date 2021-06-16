@@ -53,11 +53,30 @@ public class DoorAnimScript : MonoBehaviour
         }
         
     }
-    
     private void OnTriggerExit(Collider other)
     {
+
         if (other.gameObject.CompareTag("Player"))
-            moveBackTo();
+        {  
+            var go = other.gameObject.GetComponent<CharController>();
+            if (go.inventory.checkKeycard())
+            {
+                if (gameObject.CompareTag("RedDoor") && go.inventory.checkColor() == KeyColor.Red)
+                    moveBackTo();
+                if (gameObject.CompareTag("GreenDoor") && go.inventory.checkColor() == KeyColor.Green)
+                    moveBackTo();
+                if (gameObject.CompareTag("BlueDoor") && go.inventory.checkColor() == KeyColor.Blue)
+                    moveBackTo();
+                else
+                    print("no keycard");
+            }
+            
+            if (gameObject.CompareTag("NormalDoor"))
+            {
+                moveBackTo();
+            }
+        }
+            
     }
 
     private void moveTo()
@@ -74,7 +93,6 @@ public class DoorAnimScript : MonoBehaviour
         if (animObject2 != null)
             animObject2.transform.DOLocalMove(startPoint2, durationTime).SetEase(Ease.InOutCirc);
         DoorSound.PlayOneShot(doorClips[1]);
-
 
     }
 }

@@ -119,6 +119,8 @@ public class CodeInput : MonoBehaviour
         }
         
     }
+
+   
     public void ValueEntered(string valueEntered)
     {
         switch(valueEntered)
