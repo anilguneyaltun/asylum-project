@@ -2654,6 +2654,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1693214820}
     m_Modifications:
+    - target: {fileID: 8306780380045548755, guid: 6e0bfef0fe4444a4ca66852c487c7573, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 758.0683
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306780380045548755, guid: 6e0bfef0fe4444a4ca66852c487c7573, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 448.03406
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306780380305863368, guid: 6e0bfef0fe4444a4ca66852c487c7573, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1377951460}
+    - target: {fileID: 8306780380305863368, guid: 6e0bfef0fe4444a4ca66852c487c7573, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisplayNext
+      objectReference: {fileID: 0}
     - target: {fileID: 8306780380486871825, guid: 6e0bfef0fe4444a4ca66852c487c7573, type: 3}
       propertyPath: m_Name
       value: DialogueBox
@@ -5550,7 +5566,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-120630
+  m_Name: pb_Mesh-217188
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6723,7 +6739,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-120614
+  m_Name: pb_Mesh-217172
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7042,7 +7058,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &772235937
 PrefabInstance:
@@ -7338,7 +7354,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 969626510914554728, guid: 8b9b8b2a4d199459b990b7612e2a105e, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 969626510914554728, guid: 8b9b8b2a4d199459b990b7612e2a105e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7545,7 +7561,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-122792
+  m_Name: pb_Mesh-219406
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8169,7 +8185,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-121458
+  m_Name: pb_Mesh-218064
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9871,6 +9887,111 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136729809}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1138767137
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8190695
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5499796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.451
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946750, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_Name
+      value: DialogTrigger_3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2326516456918946741, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+--- !u!1 &1138767138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2326516456918946750, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+  m_PrefabInstance: {fileID: 1138767137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1138767139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138767138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418eace77462142aea5b28374c5306fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogue:
+    name: Dialog with human in tube
+    sentences:
+    - 'woman : Hey! Can you hear me'
+    - "woman:\u201CYou got out\u2026 Run, run before they got you\u201D"
+    - I can save you. Quick! tell me how to open this tube.
+    - "woman:\u201CThere is no hope for me. I barely feel my body, I will die here\u2026"
+    - What happened to you?
+    - She started shaking, you hardly understand her words.
+    - "woman:\u201DThey\u2026 catch us.. torture us.. for weeks.\u201D "
+    - Who? Who did that?
+    - "woman:\u201DPeople who locked us here. Murderers\u2026 Invaders\u2026\u201D"
+    - Why did they do that?
+    - "woman:\u201DThey poisoned you so hard that you can\u2019t even remember our
+      cause. We were the revolution army. We stand up agains the cruelty. And we
+      lose..\u201D"
+    - 'Her eyes slowly faded away. She returned to her deep trans state.
+
+      You
+      left with many questions. '
+    audioSource: {fileID: 0}
+    audioClips: []
 --- !u!1001 &1173398313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10047,7 +10168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 716962455552785495, guid: b9dcb2108d1a1bf43ab5c8bba3adb080, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 716962455552785495, guid: b9dcb2108d1a1bf43ab5c8bba3adb080, type: 3}
       propertyPath: m_LocalScale.x
@@ -10222,7 +10343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1991758815477822672, guid: 6f53b6dbfff3016468cd71fe40a237dc, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1991758815477822672, guid: 6f53b6dbfff3016468cd71fe40a237dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10600,7 +10721,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-122866
+  m_Name: pb_Mesh-219480
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11267,6 +11388,95 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 532f4dd9fba82a644a7598a998e9136a, type: 3}
   m_PrefabInstance: {fileID: 921341189}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1339169458
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8190695
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5499796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.451
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -22.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946750, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_Name
+      value: DialogTrigger_1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2326516456918946741, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+--- !u!1 &1339169459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2326516456918946750, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+  m_PrefabInstance: {fileID: 1339169458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1339169460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339169459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418eace77462142aea5b28374c5306fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogue:
+    name: Dialog with human in tube
+    sentences:
+    - "These people look kind of familiar.\nDo I know them?\n Who are they?"
+    audioSource: {fileID: 0}
+    audioClips: []
 --- !u!1001 &1342553235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11613,6 +11823,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 5a3971f71bc64484f9c3aefc8e97f893, type: 3}
   m_PrefabInstance: {fileID: 1024486090}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1377951460 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1897646788453327639, guid: 133b27e9800bc2e46a0034bc96d14609, type: 3}
+  m_PrefabInstance: {fileID: 1691205469}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e01b0a4c6934afc9088b615198242a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1381056643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b88352cb29e5a6e498574ac2b0a81b60, type: 3}
@@ -13320,7 +13541,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-121654
+  m_Name: pb_Mesh-218260
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13521,7 +13742,7 @@ Transform:
   - {fileID: 356147421}
   - {fileID: 1309106307}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1565000390
 PrefabInstance:
@@ -13878,7 +14099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 269293768978120721, guid: 11c8998f431041540a414025a76e3ba0, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 269293768978120721, guid: 11c8998f431041540a414025a76e3ba0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14420,7 +14641,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-121508
+  m_Name: pb_Mesh-218114
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15214,7 +15435,7 @@ RectTransform:
   - {fileID: 1691205470}
   - {fileID: 2027163082}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -16319,7 +16540,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-121344
+  m_Name: pb_Mesh-217950
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16483,7 +16704,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-121638
+  m_Name: pb_Mesh-218244
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16976,7 +17197,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-121492
+  m_Name: pb_Mesh-218098
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17628,6 +17849,96 @@ Transform:
   m_Father: {fileID: 2004690452}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1920925448
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8190695
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5499796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.451
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -29.548
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946750, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_Name
+      value: DialogTrigger
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2326516456918946741, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+--- !u!1 &1920925449 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2326516456918946750, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+  m_PrefabInstance: {fileID: 1920925448}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1920925450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920925449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418eace77462142aea5b28374c5306fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogue:
+    name: Dialog with human in tube
+    sentences:
+    - "Oh my\u2026 This is so wrong.\nThey must be prisoners.\n What are they doing
+      to these people?"
+    audioSource: {fileID: 0}
+    audioClips: []
 --- !u!4 &1935184939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8148546018833292390, guid: fdbeefdb4951fe84baca49d0bbb4b741, type: 3}
@@ -17749,7 +18060,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-122646
+  m_Name: pb_Mesh-219260
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18952,7 +19263,7 @@ Transform:
   m_LocalScale: {x: 0.12024026, y: 0.26333, z: 23.378918}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2130420084
 GameObject:
@@ -19055,7 +19366,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-121446
+  m_Name: pb_Mesh-218052
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19213,6 +19524,113 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &2135973313
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8190695
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5499796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.451
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946738, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326516456918946750, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+      propertyPath: m_Name
+      value: DialogTrigger_2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2326516456918946741, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+--- !u!1 &2135973314 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2326516456918946750, guid: da3caca9ce3314c329b8706520326cf5, type: 3}
+  m_PrefabInstance: {fileID: 2135973313}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2135973315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135973314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418eace77462142aea5b28374c5306fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogue:
+    name: Dialog with human in tube
+    sentences:
+    - "I remember\u2026 These are\u2026\nThese are my comrades.\nWe fought together
+      and captured together.\nAre any of them alive?"
+    - '*You sense a very sudden move. Almost like a glitch.
+
+      *A swift blink
+      of an eye.'
+    - '*You sense a very sudden move. Almost like a glitch.
+
+      *A swift blink
+      of an eye.'
+    - '
+
+      Someone is alive!
+
+      Need to get her out of here.'
+    - '* Young woman look like she is in some sort of trans. Her tired eyes barely
+      moves. She notices you.
+
+'
+    audioSource: {fileID: 0}
+    audioClips: []
 --- !u!1001 &1991758815799434871
 PrefabInstance:
   m_ObjectHideFlags: 0
