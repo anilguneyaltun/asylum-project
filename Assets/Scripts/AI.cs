@@ -148,6 +148,7 @@ public class AI : Perspective
             {
                 isPatrolling = true;
                 isDetected = false;
+                
             }
     }
 
