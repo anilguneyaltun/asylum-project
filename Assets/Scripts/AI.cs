@@ -147,7 +147,6 @@ public class AI : Perspective
             moveToPlayer();
         }
            
-
         if (isArrested)
         {
             PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
