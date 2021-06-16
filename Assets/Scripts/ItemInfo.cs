@@ -16,9 +16,8 @@ public class ItemInfo : MonoBehaviour
         string[] desc = new string[1];
         desc[0] = item.item.description;
         gameO.AddComponent<DialogueTrigger>()._dialogue = new Dialogue(item.item.name, desc);
-        // gameO.GetComponent<DialogueTrigger>();
+        
     }
-
     public void displayOnDialogue()
     {
         gameO.GetComponent<DialogueTrigger>().TriggerDialogue();

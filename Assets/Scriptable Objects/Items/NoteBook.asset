@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b515c0e29c41b491488b56003334e601, type: 3}
   m_Name: NoteBook
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2354422602305904717, guid: 6a268e7fe52a143098b24c28be30e92c, type: 3}
+  prefab: {fileID: 5443016105210251437, guid: 5f0dd1acbb2c81540a8cbfd27fec58bc, type: 3}
   type: 0
   description: 'Cell1: Stable Behaviors
 
@@ -21,14 +21,10 @@ MonoBehaviour:
     detoxification. May need dose increase.
 
 
-    Cell3: Stable Behaviors
+    Cell4: Possible Overdosing. Could
+    send to elimination.
 
 
-    Cell4:
-    Possible Overdosing. Could send to elimination.
-
-
-    Cell5: Stable Behaviours.
 
 
 '
