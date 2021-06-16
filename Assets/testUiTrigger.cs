@@ -25,8 +25,4 @@ public class testUiTrigger : MonoBehaviour
         }
     }
 
-    private void OnColliderEnter2D(Collider2D other)
-    {
-        
-    }
 }
