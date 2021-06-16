@@ -53,8 +53,8 @@ public class Perspective : Sense
     public void Detect()
     {
         RaycastHit hit;
-       // rayDir = playerTransform.position - transform.position;
-       rayDir = transform.forward;
+        rayDir = playerTransform.position - transform.position;
+       //rayDir = transform.forward;
 
         if (Vector3.Angle(rayDir, transform.forward) < FOV)
         {
@@ -64,26 +64,12 @@ public class Perspective : Sense
                 {
                     isDetected = true;
                 }
-                else
-                {
-                    isDetected = false;
-                }
             }
          
         }
     }
     
 
-    public void OnDrawGizmos()
-    {
-        Vector3 frontRay = transform.position + (transform.forward * viewRange);
-        
-        Vector3 leftRay = frontRay;
-        leftRay.x += (FOV * 0.5f);
-        Vector3 rightRay = frontRay;
-        rightRay.x -= FOV * 0.5f;
-        
-    }
 }
 
 
@@ -137,30 +123,30 @@ public class AI : Perspective
 
     void moveToPlayer()
     {
-        
-            if (!(_agent.remainingDistance < 2.0f))
-            {
-                isPatrolling = false;
-                _agent.destination = playerTransform.position;
-                isArrested = true;
-            }
-            else
-            {
-                isPatrolling = true;
-                isDetected = false;
-                
-            }
+        float dist = gameObject.transform.position.sqrMagnitude - playerTransform.position.sqrMagnitude;
+        if (dist <= 80.0f) 
+            isArrested = true;
+        print(dist);
+        if (dist < 250.0f)
+            _agent.destination = playerTransform.position;
+        else
+        {
+            isPatrolling = true;
+            isDetected = false;
+        }
     }
 
-    
-    
     private void Update()
     {
         sense();
         if(!_agent.pathPending && _agent.remainingDistance < 0.1f)
             doPatrol();
-        if(isDetected)
+        if (isDetected)
+        {
+            isPatrolling = false;
             moveToPlayer();
+        }
+           
 
         if (isArrested)
         {
