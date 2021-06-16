@@ -22,11 +22,9 @@ public class MouseManager : MonoBehaviour
     private bool hasGun = false;
     private bool isShooted;
     private bool isDead;
-    private bool lootable;
     private DoctorAI doctorAI;
     private AudioSource audioSource;
-    private float lastClickTime = 0.0f;
-    private float catchTime = 0.25f;
+   
     
     [SerializeField] private AudioClip[] soundClips;
     
