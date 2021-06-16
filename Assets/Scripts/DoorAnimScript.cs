@@ -37,17 +37,12 @@ public class DoorAnimScript : MonoBehaviour
             {
                 if (gameObject.CompareTag("RedDoor") && go.inventory.checkColor() == KeyColor.Red)
                     moveTo();
-                //MoveToPosition();
                 if (gameObject.CompareTag("GreenDoor") && go.inventory.checkColor() == KeyColor.Green)
                     moveTo();
-                     //MoveToPosition();
                 if (gameObject.CompareTag("BlueDoor") && go.inventory.checkColor() == KeyColor.Blue)
                     moveTo();
-                    //MoveToPosition();
-                    
                 else
                     print("no keycard");
-               
             }
             
             if (gameObject.CompareTag("NormalDoor"))
@@ -56,31 +51,14 @@ public class DoorAnimScript : MonoBehaviour
                 //MoveToPosition();
             }
         }
-       
-       
-            
+        
     }
     
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
-            moveBackTo();   
-           
-            
+            moveBackTo();
     }
-
-    public void MoveToPosition()
-    {
-        iTween.MoveTo(animObject, iTween.Hash( "islocal", true,"z", -3,"time",0.7, "easetype", "EaseInCirc" ));
-        DoorSound.PlayOneShot(doorClips[0]);
-    }
-    
-    public void MoveBackToPosition()
-    {
-        iTween.MoveTo(animObject, iTween.Hash("islocal", true, "z", -4.727,"time",0.7, "easetype", "EaseInCirc", "delay", 1));
-        DoorSound.PlayOneShot(doorClips[1]);
-    }
-
 
     private void moveTo()
     {
