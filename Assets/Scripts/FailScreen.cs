@@ -5,9 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class FailScreen : MonoBehaviour
 {
+    public Animator transition;
+    public float timerFail;
+    public bool timerstart = false;
     public void TryAgain()
     {
-        
-        SceneManager.LoadScene("Scenes/2ndLevel");
+        timerstart = true;
+        transition.SetTrigger("Start");
+
     }
+    private void Update()
+    {
+        if(timerstart==true)
+        {
+            timerFail += Time.deltaTime;
+        }
+        if(timerFail>=1.0f)
+        {
+            
+            SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
+        }
+    }
+
 }
