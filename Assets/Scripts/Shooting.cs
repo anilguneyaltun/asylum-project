@@ -19,7 +19,7 @@ public class Shooting : MonoBehaviour
     private void Start()
     {
         MM = FindObjectOfType<MouseManager>();
-        lr.GetComponent<LineRenderer>();
+        lr = gameObject.AddComponent<LineRenderer>();
         
     }
 
@@ -27,7 +27,9 @@ public class Shooting : MonoBehaviour
     {
         
         doShoot();
-        renderLine();
+        lr.SetPosition(0, transform.TransformDirection(Vector3.forward));
+        lr.startColor = Color.green;
+        //renderLine();
         
     }
 
@@ -49,11 +51,10 @@ public class Shooting : MonoBehaviour
 
     void renderLine()
     {
-        
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, range))
         {
-            lr.SetPosition(0, hit.point);
+          
         }
     }
     

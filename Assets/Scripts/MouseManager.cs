@@ -66,6 +66,10 @@ public class MouseManager : MonoBehaviour
 
                 if (hit.collider.gameObject.tag == "Doctor" || hit.collider.gameObject.tag == "Guard")
                 {
+                    if (isDead)
+                    {
+                        
+                    }
                     
                     if (inventory.checkEquipment())
                     {
@@ -75,7 +79,6 @@ public class MouseManager : MonoBehaviour
                         GameObject go = hit.collider.gameObject;
                         Animator animator = go.gameObject.GetComponent<Animator>();
                         animator.SetBool("isDead", true);
-                        
                     }
                 }
                

@@ -7,8 +7,6 @@ using UnityEngine;
 public class InventoryObject : ScriptableObject
 {
     public List<InventorySlot> Container = new List<InventorySlot>();
-    
-    
     public void AddItem(Item _item, int _amount)
     {
         bool hasItem = false;
@@ -26,7 +24,26 @@ public class InventoryObject : ScriptableObject
         {
             Container.Add(new InventorySlot(_item, _amount));
         }
-    } 
+    }
+
+    public void RemoveItem(Item _item, int _amount)
+    {
+        bool hasItem = true;
+        for (int i = 0; i < Container.Count; i++)
+        {
+            if (Container[i].item = _item)
+            {
+                Container[i].RemoveAmount(_amount);
+                hasItem = false;
+                break;
+            }
+        }
+
+       /* if (hasItem)
+        {
+            Container.Remove(new InventorySlot(_item, _amount));
+        }*/
+    }
 
     public bool checkKeycard()
     {
@@ -94,6 +111,11 @@ public class InventoryObject : ScriptableObject
         public void AddAmount(int value)
         {
             amount += value;
+        }
+        
+        public void RemoveAmount(int value)
+        {
+            amount -= value;
         }
     }
 
