@@ -9,6 +9,8 @@ public class DocKill : MonoBehaviour
     [SerializeField]
     private AudioClip clip;
     Animator anim;
+    private float timer;
+    
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -17,14 +19,17 @@ public class DocKill : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {  
         bool isDead = anim.GetBool("isDead");
         if(isDead)
-        {
+        { timer += Time.deltaTime ;
             if(!alreadyPlayed)
-            {
-                killSound.PlayOneShot(clip);
-                alreadyPlayed = true;
+            {if(timer>=0.4f)
+                {
+                    killSound.PlayOneShot(clip);
+                    alreadyPlayed = true;
+                }
+                
             }
             
             

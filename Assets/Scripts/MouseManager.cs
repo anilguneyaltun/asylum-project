@@ -21,8 +21,14 @@ public class MouseManager : MonoBehaviour
     private bool hasGun = false;
     private bool isShooted;
     private bool isDead;
+
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip[] soundClips;
+
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         timer = Time.deltaTime;
         charGO = FindObjectOfType<CharController>();
         hasGun = true;
@@ -48,6 +54,7 @@ public class MouseManager : MonoBehaviour
                     go = hit.collider.gameObject;
                     addItem();
                     ItemInfo.getObject(go);
+                    audioSource.PlayOneShot(soundClips[0]);
                 }
             
                 if (hasGun)
@@ -71,8 +78,8 @@ public class MouseManager : MonoBehaviour
                         GameObject go = hit.collider.gameObject;
                         Animator animator = go.gameObject.GetComponent<Animator>();
                         animator.SetBool("isDead", true);
-                        
-                        
+                        audioSource.PlayOneShot(soundClips[1]);
+
                     }
                 }
                
