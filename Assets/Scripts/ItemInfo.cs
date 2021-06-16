@@ -7,6 +7,7 @@ public class ItemInfo : MonoBehaviour
 {
     private DialogueTrigger trigger;
     private static GameObject gameO;
+    private InventoryObject inventoryObject;
 
     public static void getObject(GameObject go)
     {
@@ -23,6 +24,7 @@ public class ItemInfo : MonoBehaviour
         gameO.GetComponent<DialogueTrigger>().TriggerDialogue();
     }
 
+   
 }
 
 

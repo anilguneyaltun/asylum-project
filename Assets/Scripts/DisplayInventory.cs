@@ -38,6 +38,7 @@ public class DisplayInventory : MonoBehaviour
     {
         return new Vector3(xStart + xSpace * (i % numOfCol), yStart + (-ySpace * (i / numOfCol)),0f);
     }
+    
 
     public void updateDisplay()
     {
