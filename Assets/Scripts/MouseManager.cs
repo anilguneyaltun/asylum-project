@@ -25,6 +25,8 @@ public class MouseManager : MonoBehaviour
     private bool lootable;
     private DoctorAI doctorAI;
     private AudioSource audioSource;
+    private float lastClickTime = 0.0f;
+    private float catchTime = 0.25f;
     
     [SerializeField] private AudioClip[] soundClips;
     
@@ -42,8 +44,6 @@ public class MouseManager : MonoBehaviour
 
     void Update(){
         
-       // if(!Application.isEditor)
-          //  Cursor.SetCursor(moveToCursor, Vector2.zero, CursorMode.Auto);
         RaycastHit hit;
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),out hit, 50, clickableLayer.value))
         {
@@ -53,72 +53,58 @@ public class MouseManager : MonoBehaviour
             
             if(isWall)
                 Cursor.SetCursor(mainCursor, Vector2.zero, CursorMode.Auto);
-            float delay;
+         
             if (Input.GetMouseButtonDown(0))
             {
-                if (isDoubleClicked = false)
-                {
+             
+                    if ((hit.collider.gameObject.tag == "Doctor" || hit.collider.gameObject.tag == "Guard" ))
+                    {
                     
-                }
-                
-                
-                if (hit.collider.gameObject.tag == "Collectable")
-                {
-                    go = hit.collider.gameObject;
-                    addItem();
-                    ItemInfo.getObject(go);
-                    audioSource.PlayOneShot(soundClips[0]);
-                }
+                        InventoryObject inventoryObject = doctorAI.inventory;
+                        for (int i = 0; i < inventoryObject.Container.Count; i++)
+                        {
+                            var _item = inventoryObject.Container[i].item;
+                            inventory.AddItem(_item, 1);
+                            inventoryObject.RemoveItem(_item, 1);
+                        }
+                    }
+                    
+                    if (hit.collider.gameObject.tag == "Collectable")
+                    {
+                        go = hit.collider.gameObject;
+                        addItem();
+                        ItemInfo.getObject(go);
+                        audioSource.PlayOneShot(soundClips[0]);
+                    }
             
-                if (hasGun)
-                {
-                    if (hit.collider.gameObject.tag == "Guard")
+                    if (hasGun)
                     {
-                        print("hit");
-                        isShooted = true;
+                        if (hit.collider.gameObject.tag == "Guard")
+                        {
+                            print("hit");
+                            isShooted = true;
+                        }
+                        else
+                        {
+                            isShooted = false;
+                        }
                     }
-                    else
-                    {
-                        isShooted = false;
-                    }
-                }
 
-                if ((hit.collider.gameObject.tag == "Doctor" || hit.collider.gameObject.tag == "Guard") && !lootable)
-                {
-
-                    if (inventory.checkEquipment())
+                    if ((hit.collider.gameObject.tag == "Doctor" || hit.collider.gameObject.tag == "Guard"))
                     {
-                        isAttack = true;
-                        StartCoroutine(waitForSec());
+
+                        if (inventory.checkEquipment())
+                        {
+                            isAttack = true;
+                            StartCoroutine(waitForSec());
                         
-                        GameObject go = hit.collider.gameObject;
-                        Animator animator = go.gameObject.GetComponent<Animator>();
-                        animator.SetBool("isDead", true);
-                        isDead =  animator.GetBool("isDead");
-                        audioSource.PlayOneShot(soundClips[1]);
+                            GameObject go = hit.collider.gameObject;
+                            Animator animator = go.gameObject.GetComponent<Animator>();
+                            animator.SetBool("isDead", true);
+                            isDead =  animator.GetBool("isDead");
+                            audioSource.PlayOneShot(soundClips[1]);
+                        }
                     }
-                    
-                }
-
-                if (isDead)
-                    lootable = true;
-                else
-                    lootable = false;
-                
-
-                if ((hit.collider.gameObject.tag == "Doctor" || hit.collider.gameObject.tag == "Guard" )&& lootable)
-                {
-                    
-                    InventoryObject inventoryObject = doctorAI.inventory;
-                    for (int i = 0; i < inventoryObject.Container.Count; i++)
-                    {
-                        var _item = inventoryObject.Container[i].item;
-                        inventory.AddItem(_item, 1);
-                        inventoryObject.RemoveItem(_item, 1);
-                    }
-                        
-                }
-
             }
             if(Input.GetMouseButtonDown(1)) 
             {
@@ -126,7 +112,7 @@ public class MouseManager : MonoBehaviour
                     OnClickEnviroment.Invoke(hit.point);
             }
         }
-     
+        
     }
 
     IEnumerator waitForSec()
@@ -154,16 +140,7 @@ public class MouseManager : MonoBehaviour
     {
         return isShooted;
     }
-
-    public Transform lookToMousePos()
-    {
-        return target;
-    }
-
-    bool doubleClick()
-    {
-        return isDoubleClicked;
-    }
+    
     
 }
 

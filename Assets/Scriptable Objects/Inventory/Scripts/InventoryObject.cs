@@ -31,7 +31,7 @@ public class InventoryObject : ScriptableObject
         bool hasItem = true;
         for (int i = 0; i < Container.Count; i++)
         {
-            if (Container[i].item = _item)
+            if (Container[i].item == _item)
             {
                 Container[i].RemoveAmount(_amount);
                 hasItem = false;

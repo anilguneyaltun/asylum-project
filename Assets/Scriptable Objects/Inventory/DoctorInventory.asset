@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d628d6480bbb4bc6be63fae989ff10b, type: 3}
   m_Name: DoctorInventory
   m_EditorClassIdentifier: 
-  Container: []
+  Container:
+  - item: {fileID: 11400000, guid: 09703c07f4bda4eeabeb9cf362630abd, type: 2}
+    amount: 2

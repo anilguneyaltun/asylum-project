@@ -24,5 +24,4 @@ public class testUiTrigger : MonoBehaviour
             Debug.Log("Hit");
         }
     }
-
 }

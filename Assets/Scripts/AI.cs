@@ -160,13 +160,15 @@ public class AI : Perspective
             doPatrol();
         if(isDetected)
             moveToPlayer();
+
+        if (isArrested)
+        {
+            PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene("Scenes/Fail");
+        }
         
         animator.SetFloat(speedID, _agent.velocity.magnitude);
     }
 
-    public bool arrest()
-    {
-        return isArrested;
-    }
-    
+  
 }
