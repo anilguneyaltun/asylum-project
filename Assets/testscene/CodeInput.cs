@@ -21,10 +21,10 @@ public class CodeInput : MonoBehaviour
     public float codetimer2 = 0.0f;
     Animator textanim;
     Animator spriteanim;
-    public bool isOpen;
+    private bool isOpen;
     public AudioSource keycodeAudio;
-
-
+    [SerializeField]
+    public GameObject[] cams;
     void Start()
     {
         
@@ -71,6 +71,12 @@ public class CodeInput : MonoBehaviour
                 textanim.enabled = false;
                 isOpen = true;
                 objectToEnable.SetActive(false);
+                for (int i=0;i<cams.Length;i++)
+                {
+                    cams[i].SetActive(false);
+                }
+                
+                
             }
 
         }
@@ -138,5 +144,10 @@ public class CodeInput : MonoBehaviour
                 displayText.text = input.ToString();
                 break;
         }
+    }
+
+    public bool isCorrect()
+    {
+        return isOpen;
     }
 }

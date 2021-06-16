@@ -677,6 +677,7 @@ Transform:
   - {fileID: 507684422}
   - {fileID: 2964863158022186367}
   - {fileID: 92605367}
+  - {fileID: 1343608203}
   - {fileID: 688615556}
   - {fileID: 529242125}
   m_Father: {fileID: 1132163247}
@@ -1072,11 +1073,20 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!4 &92605367 stripped
+--- !u!4 &92605367
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 4461115863164193990, guid: b1f14373529114de3a088134a6f8dbd3, type: 3}
   m_PrefabInstance: {fileID: 4461115863072114545}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753214674}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 48699046}
+  m_RootOrder: 48
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &117695474
 GameObject:
   m_ObjectHideFlags: 0
@@ -3246,6 +3256,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 383450855}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &405142610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100010, guid: 17732e27eedd4264f986e55707fe481c, type: 3}
+  m_PrefabInstance: {fileID: 507684421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &435791481
 GameObject:
   m_ObjectHideFlags: 0
@@ -4442,7 +4457,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 48699046}
-  m_RootOrder: 50
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &530721443
 GameObject:
@@ -5859,7 +5874,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 48699046}
-  m_RootOrder: 49
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &690939051
 PrefabInstance:
@@ -9817,6 +9832,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336310679}
   m_CullTransparentMesh: 1
+--- !u!1 &1343608202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1343608203}
+  m_Layer: 0
+  m_Name: Syringe (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1343608203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343608202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 48699046}
+  m_RootOrder: 49
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1362557966 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 196180510801897197, guid: b9dcb2108d1a1bf43ab5c8bba3adb080, type: 3}
@@ -11316,6 +11361,11 @@ RectTransform:
   m_AnchoredPosition: {x: 578, y: -16.792305}
   m_SizeDelta: {x: 1008.7068, y: 119.1761}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1628529119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100010, guid: 17732e27eedd4264f986e55707fe481c, type: 3}
+  m_PrefabInstance: {fileID: 1830268037}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1643509298
 GameObject:
   m_ObjectHideFlags: 0
@@ -12004,6 +12054,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 7266c3881a7b9454d97e6ea18021e2bb, type: 3}
   m_PrefabInstance: {fileID: 381689249}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1753214674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 92605367}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1753357674
 GameObject:
   m_ObjectHideFlags: 0
@@ -13477,8 +13543,10 @@ MonoBehaviour:
   displaytextField: {fileID: 1414462538}
   codetimer: 0
   codetimer2: 0
-  isOpen: 0
   keycodeAudio: {fileID: 435791483}
+  cams:
+  - {fileID: 1628529119}
+  - {fileID: 405142610}
 --- !u!4 &1950846012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 913518405, guid: 6a77c94c6a5490d479a919247b4327a7, type: 3}
