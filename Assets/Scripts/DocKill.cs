@@ -22,17 +22,16 @@ public class DocKill : MonoBehaviour
     {  
         bool isDead = anim.GetBool("isDead");
         if(isDead)
-        { timer += Time.deltaTime ;
+        { 
+            timer += Time.deltaTime ;
             if(!alreadyPlayed)
-            {if(timer>=0.4f)
+            {
+                if(timer>=0.4f)
                 {
                     killSound.PlayOneShot(clip);
                     alreadyPlayed = true;
                 }
-                
             }
-            
-            
         }
     }
 }

@@ -23,8 +23,6 @@ public class ItemInfo : MonoBehaviour
     {
         gameO.GetComponent<DialogueTrigger>().TriggerDialogue();
     }
-
-   
 }
 
 

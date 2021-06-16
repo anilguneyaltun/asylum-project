@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 519483516}
   - component: {fileID: 519483517}
   - component: {fileID: 519483519}
+  - component: {fileID: 4344496552892449348}
   m_Layer: 3
   m_Name: Doctor
   m_TagString: Doctor
@@ -194,6 +195,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alreadyPlayed: 0
   clip: {fileID: 8300000, guid: 23d0da64f2cd3f1469d472b7690a5287, type: 3}
+--- !u!114 &4344496552892449348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2552667543063259383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6543e448e093f3e409422f9d7d27f4c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: 018553e9ce0c8cf4fab1de57db355920, type: 2}
 --- !u!1001 &2552667543954099035
 PrefabInstance:
   m_ObjectHideFlags: 0

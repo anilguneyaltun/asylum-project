@@ -13,7 +13,7 @@ public class MouseManager : MonoBehaviour
     public InventoryObject inventory;
     public Texture2D mainCursor;
     public Texture2D moveToCursor;
-
+    
     private Transform target;
     private float timer = 0;
     private CharController charGO;
@@ -22,17 +22,22 @@ public class MouseManager : MonoBehaviour
     private bool hasGun = false;
     private bool isShooted;
     private bool isDead;
-
+    private bool lootable;
+    private DoctorAI doctorAI;
     private AudioSource audioSource;
-    [SerializeField]
-    private AudioClip[] soundClips;
-
+    
+    [SerializeField] private AudioClip[] soundClips;
+    
+    private bool isDoubleClicked;
+    private bool timerRunning;
+    private float timerForDoubleClick;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         timer = Time.deltaTime;
         charGO = FindObjectOfType<CharController>();
         hasGun = true;
+        doctorAI = FindObjectOfType<DoctorAI>();
     }
 
     void Update(){
@@ -48,9 +53,15 @@ public class MouseManager : MonoBehaviour
             
             if(isWall)
                 Cursor.SetCursor(mainCursor, Vector2.zero, CursorMode.Auto);
-            
+            float delay;
             if (Input.GetMouseButtonDown(0))
             {
+                if (isDoubleClicked = false)
+                {
+                    
+                }
+                
+                
                 if (hit.collider.gameObject.tag == "Collectable")
                 {
                     go = hit.collider.gameObject;
@@ -72,29 +83,42 @@ public class MouseManager : MonoBehaviour
                     }
                 }
 
-                if (hit.collider.gameObject.tag == "Doctor" || hit.collider.gameObject.tag == "Guard")
+                if ((hit.collider.gameObject.tag == "Doctor" || hit.collider.gameObject.tag == "Guard") && !lootable)
                 {
-                    if (isDead)
-                    {
-                        
-                    }
-                    
+
                     if (inventory.checkEquipment())
                     {
-                      
                         isAttack = true;
                         StartCoroutine(waitForSec());
                         
                         GameObject go = hit.collider.gameObject;
                         Animator animator = go.gameObject.GetComponent<Animator>();
                         animator.SetBool("isDead", true);
-
+                        isDead =  animator.GetBool("isDead");
                         audioSource.PlayOneShot(soundClips[1]);
-
                     }
+                    
                 }
-               
-    
+
+                if (isDead)
+                    lootable = true;
+                else
+                    lootable = false;
+                
+
+                if ((hit.collider.gameObject.tag == "Doctor" || hit.collider.gameObject.tag == "Guard" )&& lootable)
+                {
+                    
+                    InventoryObject inventoryObject = doctorAI.inventory;
+                    for (int i = 0; i < inventoryObject.Container.Count; i++)
+                    {
+                        var _item = inventoryObject.Container[i].item;
+                        inventory.AddItem(_item, 1);
+                        inventoryObject.RemoveItem(_item, 1);
+                    }
+                        
+                }
+
             }
             if(Input.GetMouseButtonDown(1)) 
             {
@@ -135,8 +159,12 @@ public class MouseManager : MonoBehaviour
     {
         return target;
     }
+
+    bool doubleClick()
+    {
+        return isDoubleClicked;
+    }
     
-  
 }
 
 [System.Serializable]

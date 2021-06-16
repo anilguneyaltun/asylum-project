@@ -56,12 +56,13 @@ public class InventoryObject : ScriptableObject
         return hasKeycard;
     }
 
+ 
+
     public KeyColor checkColor()
     {
         KeyColor color = KeyColor.None;
         for (int i = 0; i < Container.Count; i++)
         {
-            
             if (Container[i].item.type == ItemType.KeyCard)
             {
                 if (Container[i].item.color == KeyColor.Red)
@@ -76,7 +77,6 @@ public class InventoryObject : ScriptableObject
                 {
                     color = KeyColor.Green;
                 }
-                
             }
            
         }
