@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 1860878545}
   sentences:
-  - THE FREEDOM IS BEGINING NOW
+  - THE FREEDOM IS BEGINNING NOW
   typingspeed: 0.2
   continueButton: {fileID: 0}
   sesarray: []
