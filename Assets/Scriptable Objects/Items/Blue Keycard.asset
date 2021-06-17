@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Blue Keycard
   m_EditorClassIdentifier: 
   prefab: {fileID: 9065546630689557566, guid: f00a2830861736943b92af075355ac10, type: 3}
-  type: 1
-  description: 
+  type: 0
+  description: 'Blue Keycard
+
+'
   color: 2
